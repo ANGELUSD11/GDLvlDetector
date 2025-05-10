@@ -1,0 +1,5 @@
+# Ignorar archivos de video que superan el límite de tamaño
+videos/*.mp4
+
+# Ignorar el archivo de modelo grande (gd_level_classifier.h5)
+gd_level_classifier.h5
