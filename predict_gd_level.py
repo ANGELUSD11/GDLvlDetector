@@ -27,9 +27,15 @@ img_array = np.expand_dims(img_array, axis=0)
 prediction = model.predict(img_array)[0]  # Primera (y única) predicción
 predicted_index = np.argmax(prediction)
 confidence = prediction[predicted_index] * 100
-predicted_class = index_to_class[predicted_index]
 
-# Mostrar resultado
 print(f"\n📷 Imagen: {img_path}")
-print(f"✅ El nivel detectado es: **{predicted_class}**")
-print(f"🔢 Confianza: {confidence:.2f}%")
+
+confidence_threshold = 50.0
+
+if confidence < confidence_threshold:
+    print("No se encontró ningún nivel que coincida con la imagen dada")
+else:
+    # Mostrar resultado
+    predicted_class = index_to_class[predicted_index]
+    print(f"✅ El nivel detectado es: **{predicted_class}**")
+    print(f"🔢 Confianza: {confidence:.2f}%")
