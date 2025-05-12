@@ -32,3 +32,4 @@ for filename in os.listdir(videos_folder):
     if filename.endswith((".mp4", ".avi", ".mov")):  # formatos comunes
         video_path = os.path.join(videos_folder, filename)
         extract_frames(video_path, output_folder, interval)
+print(f"Extracción de frames completada para todos los videos en {videos_folder}")
