@@ -38,3 +38,9 @@ for i in sorted_indices:
     class_name = index_to_class[i]
     prob = prediction[i] * 100
     print(f"{class_name:30} → {prob:.2f}%")
+
+#mostrar la clase definitiva
+predicted_index = np.argmax(prediction)
+predicted_class = index_to_class(predicted_index)
+confidence = prediction[predicted_index] * 100
+print(f"\nEl nivel detectado es: {predicted_class} con un porcentaje de {confidence:.2f}%")
